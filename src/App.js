@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Athlete from './Athlete';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -6,10 +7,10 @@ function App() {
 
   //Strava Credentials
   let clientID = "87760";
-  let clientSecret = "f04605efba73f7c138835354a71ae04033d7dbda";
+  let clientSecret = "c49267c34da54ebb8ec31802254a92e86920ef39";
 
   // refresh token and call address
-  const refreshToken = "5010cbc23485a5b4c063cbb1266abf570fdddc15";
+  const refreshToken = "c248d263f6ef4cab61eb1c2e19b9eee6a21eb03c";
   const callRefresh = `https://www.strava.com/oauth/token?client_id=${clientID}&client_secret=${clientSecret}&refresh_token=${refreshToken}&grant_type=refresh_token`
   
   // endpoint for read-all activities. temporary token is added in getActivities()
@@ -33,17 +34,9 @@ function App() {
       .catch(e => console.log(e))
   }
 
-  function showActivities(){
-    if(isLoading) return <>LOADING</>
-    if(!isLoading) {
-      console.log(activities)
-      return activities.length
-    }
-  }
-
   return (
     <div className="App">
-      {showActivities()}
+      <Athlete activities={ activities} />
     </div>
   );
 }
