@@ -6,11 +6,11 @@ function App() {
   const [activities, setActivities] = useState({});
 
   //Strava Credentials
-  let clientID = "87760";
-  let clientSecret = "c1902065f114f7fc616ebce6151c833699407803";
+  let clientID = process.env.REACT_APP_CLIENT_ID;
+  let clientSecret = process.env.REACT_APP_CLIENT_SECRET;
 
   // refresh token and call address
-  const refreshToken = "c248d263f6ef4cab61eb1c2e19b9eee6a21eb03c";
+  const refreshToken = process.env.REACT_APP_REFRESH_TOKEN;
   const callRefresh = `https://www.strava.com/oauth/token?client_id=${clientID}&client_secret=${clientSecret}&refresh_token=${refreshToken}&grant_type=refresh_token`;
 
   // endpoint for read-all activities. temporary token is added in getActivities()
