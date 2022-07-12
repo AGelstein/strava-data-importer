@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Athlete from "./Athlete";
+import ErrorBoundary from "./ErrorBoundary";
 
 function App() {
   const [, setIsLoading] = useState(true);
@@ -39,7 +40,9 @@ function App() {
 
   return (
     <div className="App">
-      <Athlete activities={activities} />
+      <ErrorBoundary>
+        <Athlete activities={activities} />
+      </ErrorBoundary>
     </div>
   );
 }
