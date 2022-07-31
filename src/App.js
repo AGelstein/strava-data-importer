@@ -41,7 +41,6 @@ function App() {
   return (
     <div className="my-0 mx-auto w-11/12">
       <ErrorBoundary>
-        <h1 className="text-3xl font-bold underline">Strava Tailwind App!</h1>
         <Athlete activities={activities} />
       </ErrorBoundary>
     </div>
