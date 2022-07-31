@@ -1,18 +1,32 @@
-const Athlete = ({ activities }) => {
+const Athlete = ({
+  activities: {
+    id,
+    firstname,
+    lastname,
+    bio,
+    weight,
+    city,
+    state,
+    country,
+    premium,
+    updated_at,
+    profile,
+  },
+}) => {
   return (
     <div>
-      <p>ID: {activities.id}</p>
-      <p>First Name: {activities.firstname}</p>
-      <p>Last Name: {activities.lastname}</p>
-      <p>Bio: {activities.bio}</p>
-      <p>Weight: {activities.weight}</p>
-      <p>City: {activities.city}</p>
-      <p>State: {activities.state}</p>
-      <p>Country: {activities.country}</p>
-      <p>Premium: {activities.premium}</p>
-      <p>Updated Last: {activities.updated_at}</p>
-      <div className="image-container">
-        <img src={activities.profile} alt={activities.firstname} />
+      <p htmlFor="id">ID: {id}</p>
+      <p htmlFor="firstname">First Name: {firstname}</p>
+      <p htmlFor="lastname">Last Name: {lastname}</p>
+      <p htmlFor="bio">Bio: {bio}</p>
+      <p htmlFor="weight">Weight: {weight}</p>
+      <p htmlFor="city">City: {city}</p>
+      <p htmlFor="state">State: {state}</p>
+      <p htmlFor="country">Country: {country}</p>
+      <p htmlFor="premium">Premium: {premium}</p>
+      <p htmlFor="update_at">Updated At: {updated_at}</p>
+      <div>
+        <img src={profile} alt={firstname} />
       </div>
     </div>
   );
